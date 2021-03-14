@@ -9,9 +9,9 @@ import com.example.deva.product.Product;
 @Repository
 public interface ProductRepository {
 
-	public abstract void saveProduct(Product product);
-	public abstract void updateProduct(String id, Product product);
-	public abstract void deleteProduct(String id);
-	public abstract Product getProduct(String id);
-	public abstract ArrayList<Product> getProductAll();
+	public abstract void save(Product product);
+	public abstract void update(String id, Product product);
+	public abstract void delete(String id);
+	public abstract Product findById(String id);
+	public abstract ArrayList<Product> findAll();
 }
