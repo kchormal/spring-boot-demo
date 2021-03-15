@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.example.deva.product.Product;
+import com.example.deva.model.Product;
 import com.example.deva.service.ProductServiceImpl;
 
 @Controller(value = "/product")

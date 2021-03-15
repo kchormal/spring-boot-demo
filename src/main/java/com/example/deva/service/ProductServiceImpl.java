@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.deva.product.Product;
+import com.example.deva.model.Product;
 import com.example.deva.repository.ProductRepository;
 
 @Service

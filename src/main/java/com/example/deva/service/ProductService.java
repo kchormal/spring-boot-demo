@@ -2,7 +2,7 @@ package com.example.deva.service;
 
 import java.util.ArrayList;
 
-import com.example.deva.product.Product;
+import com.example.deva.model.Product;
 
 public interface ProductService {
 	

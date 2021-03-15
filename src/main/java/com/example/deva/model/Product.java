@@ -1,4 +1,4 @@
-package com.example.deva.product;
+package com.example.deva.model;
 
 public class Product {
 	
