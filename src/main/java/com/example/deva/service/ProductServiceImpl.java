@@ -15,18 +15,13 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository repository;
 	
 	@Override
-	public void createProduct(Product product) {
-		repository.save(product);
-	}
-
-	@Override
-	public void updateProduct(String id, Product product) {
-		repository.update(id, product);
+	public Product createProduct(Product product) {
+		return repository.save(product);
 	}
 
 	@Override
 	public void deleteProduct(String id) {
-		repository.delete(id);
+		repository.deleteById(id);
 	}
 
 	@Override

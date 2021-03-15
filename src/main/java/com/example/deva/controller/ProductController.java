@@ -17,36 +17,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.deva.model.Product;
 import com.example.deva.service.ProductServiceImpl;
 
-@Controller(value = "/product")
+@Controller
 public class ProductController {
 
 	@Autowired
     private ProductServiceImpl productService;
 	
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/product/{id}")
 	public ResponseEntity<Object> getProduct(@PathVariable String id) {
 		Product product = productService.getProduct(id);
 		return new ResponseEntity<>(product, HttpStatus.OK);
 	}
 	
-	@GetMapping()
+	@GetMapping(value = "/product")
 	public ResponseEntity<Object> getAllProduct() {
 		List<Product> product = productService.getProducts();
 		return new ResponseEntity<>(product, HttpStatus.OK);
 	}
 	
-	@PostMapping()
+	@PostMapping(value = "/product")
 	public ResponseEntity<Object> postProduct(@RequestBody Product product) {
-		productService.createProduct(product);
-		return new ResponseEntity<>("Product saved Successfully...", HttpStatus.OK);
+		Product savedProduct = productService.createProduct(product);
+		return new ResponseEntity<>(savedProduct, HttpStatus.OK);
 	}
 	
-	@PutMapping(value = "/{id}")
+	@PutMapping(value = "/product/{id}")
 	public ResponseEntity<Object> updateProduct(@RequestBody Product product, @PathVariable String id) {
 		
 		Product dbProduct = productService.getProduct(id);
 		if(dbProduct != null) {
-			productService.updateProduct(id, product);
+			productService.createProduct(product);
 			return new ResponseEntity<>("Product updated Successfully...", HttpStatus.OK);
 		}else {
 			productService.createProduct(product);
@@ -55,9 +55,9 @@ public class ProductController {
 		
 	}
 	
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "/product/{id}")
 	public ResponseEntity<Object> deleteProduct(@PathVariable String id) {
-		return new ResponseEntity<>("Jamale re", HttpStatus.OK);
+		return new ResponseEntity<>("Product deleted Successfully...", HttpStatus.OK);
 	}
 	
 }
